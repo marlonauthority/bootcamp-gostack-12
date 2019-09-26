@@ -13,6 +13,18 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/react/cleanup-after-each",
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "moduleNameMapper": {
+      "^~/(.*)": "<rootDir>/src/$1"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -26,6 +38,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4",
+    "@types/jest": "^24.0.18",
     "react-app-rewired": "^2.1.3"
   }
 }
